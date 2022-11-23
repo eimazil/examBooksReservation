@@ -12,6 +12,10 @@ function Create() {
   const [error, setError] = useState("");
 
   const add = () => {
+    if (name.length === 0) {
+      makeMsg("Please add a name", "error");
+      return;
+    }
     if (pass !== pass2) {
       makeMsg("Passwords do not match!", "error");
       return;
