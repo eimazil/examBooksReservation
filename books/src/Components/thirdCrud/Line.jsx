@@ -6,11 +6,11 @@ function Line({ category }) {
 
   return (
     <li className="list-group-item">
-      <div className="line scopes_line">
+      <div className="d-flex flex-column flex-sm-row justify-content-sm-between">
         <div className="line__content">
-          <div className="line__content__title">{category.title}</div>
+          <h4>{category.title}</h4>
         </div>
-        <div className="line__buttons">
+        <div className="align-self-start d-flex flex-row gap-1">
           <button
             onClick={() => setModalData(category)}
             type="button"

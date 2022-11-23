@@ -7,7 +7,7 @@ function Nav({ status }) {
         <div className="col-12">
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
-              <div className="navbar-brand">Books</div>
+              <div className="navbar-brand">Books Reservation</div>
               <button
                 className="navbar-toggler"
                 type="button"

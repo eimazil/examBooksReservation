@@ -20,7 +20,6 @@ function Create() {
       makeMsg("Password field cannot be empty", "error");
       return;
     }
-
     setCreateUser({
       name,
       pass,
