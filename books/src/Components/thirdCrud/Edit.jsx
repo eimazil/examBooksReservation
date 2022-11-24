@@ -41,7 +41,7 @@ function Edit() {
       <div className="modal-dialog modal-dialog-centered">
         <div className="modal-content">
           <div className="modal-header">
-            <h5 className="modal-title">Edit specialisations</h5>
+            <h5 className="modal-title">Edit categories</h5>
             <button
               onClick={() => setModalData(null)}
               type="button"
@@ -52,7 +52,7 @@ function Edit() {
           <div className="card m-4">
             <div className="card-body">
               <div className="mb-3">
-                <label className="form-label">Specialisation name</label>
+                <label className="form-label">Categorie name</label>
                 <input
                   type="text"
                   className="form-control"

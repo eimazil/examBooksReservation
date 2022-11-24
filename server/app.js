@@ -288,7 +288,7 @@ app.get("/categories", (req, res) => {
 });
 
 // EDIT
-app.put("/admin/categories/:id", (req, res) => {
+app.put("/categories/:id", (req, res) => {
   const sql = `
     UPDATE categories
     SET title = ?
