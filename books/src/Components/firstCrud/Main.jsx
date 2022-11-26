@@ -10,8 +10,6 @@ function Main() {
   const [reserveData, setReserveData] = useState(null);
   const [categories, setCategories] = useState(null);
 
-  console.log(reserveData);
-
   // READ for list
   useEffect(() => {
     axios.get("http://localhost:3003/categories", authConfig()).then((res) => {

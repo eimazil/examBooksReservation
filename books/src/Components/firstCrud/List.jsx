@@ -1,6 +1,5 @@
 import { useState, useEffect, useContext } from "react";
 import FirstContext from "../../Contexts/FirstContext";
-import cities from "../../data/cities";
 import Line from "./Line";
 
 function List() {
@@ -9,7 +8,7 @@ function List() {
 
   const { categories, books, setBooks } = useContext(FirstContext);
 
-  const [stats, setStats] = useState({ clothesCount: null });
+  const [stats, setStats] = useState({ booksCount: null });
 
   useEffect(() => {
     if (null === books) {
@@ -111,10 +110,17 @@ function List() {
           </div>
           <div className="card-body">
             <ul className="list-group">
-              {books?.map((b) =>
-                b.showCategory === true && b.showTitle === true ? (
-                  <Line key={b.id} book={b} />
-                ) : null
+              {stats.booksCount > 0 ? (
+                books?.map((b) =>
+                  b.showCategory === true && b.showTitle === true ? (
+                    <Line key={b.id} book={b} />
+                  ) : null
+                )
+              ) : (
+                <span className=" mt-2 mt-sm-4">
+                  At the moment there are no books to show 🙁 <br /> Try
+                  changing the criteria!
+                </span>
               )}
             </ul>
           </div>

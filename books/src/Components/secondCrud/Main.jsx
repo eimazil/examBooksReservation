@@ -5,6 +5,7 @@ import List from "./List";
 import axios from "axios";
 import Edit from "./Edit";
 import { authConfig } from "../../Functions/auth";
+import Delete from "./Delete";
 
 function Main() {
   const [lastUpdate, setLastUpdate] = useState(Date.now());
@@ -12,6 +13,7 @@ function Main() {
   const [books, setBooks] = useState(null);
   const [categories, setCategories] = useState(null);
   const [deleteData, setDeleteData] = useState(null);
+  const [modalDelData, setModalDelData] = useState(null);
   const [modalData, setModalData] = useState(null);
   const [editData, setEditData] = useState(null);
   const [returnedData, setReturnedData] = useState(null);
@@ -28,7 +30,6 @@ function Main() {
       setBooks(
         res.data.map((b) => ({
           ...b,
-          showCategory: true,
           showTitle: true,
         }))
       );
@@ -91,6 +92,8 @@ function Main() {
         categories,
         setDeleteData,
         setReturnedData,
+        setModalDelData,
+        modalDelData,
         modalData,
         setModalData,
         setBooks,
@@ -104,6 +107,7 @@ function Main() {
         </div>
       </div>
       <Edit />
+      <Delete />
     </SecondContext.Provider>
   );
 }

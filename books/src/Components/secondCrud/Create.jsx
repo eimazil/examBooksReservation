@@ -2,7 +2,6 @@ import { useState, useContext, useRef } from "react";
 import DataContext from "../../Contexts/DataContext";
 import SecondContext from "../../Contexts/SecondContext";
 import getBase64 from "../../Functions/getBase64";
-import cities from "../../data/cities";
 import { validName } from "../../Functions/regex";
 
 function Create() {

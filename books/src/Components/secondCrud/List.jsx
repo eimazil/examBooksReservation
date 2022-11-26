@@ -3,7 +3,7 @@ import SecondContext from "../../Contexts/SecondContext";
 import Line from "./Line";
 
 function List() {
-  const { books, setBooks, categories } = useContext(SecondContext);
+  const { books, setBooks } = useContext(SecondContext);
 
   const [titleFilter, setTitleFilter] = useState("");
   const [stats, setStats] = useState({ clothesCount: null });
@@ -14,9 +14,7 @@ function List() {
     }
     setStats((s) => ({
       ...s,
-      booksCount: books?.filter(
-        (s) => s.showCategory === true && s.showTitle === true
-      ).length,
+      booksCount: books?.filter((s) => s.showTitle === true).length,
     }));
   }, [books]);
 
@@ -76,10 +74,15 @@ function List() {
           </div>
           <div className="card-body">
             <ul className="list-group">
-              {books?.map((b) =>
-                b.showCategory === true && b.showTitle === true ? (
-                  <Line key={b.id} book={b} />
-                ) : null
+              {stats.booksCount > 0 ? (
+                books?.map((b) =>
+                  b.showTitle === true ? <Line key={b.id} book={b} /> : null
+                )
+              ) : (
+                <span className=" mt-2 mt-sm-4">
+                  At the moment there are no books to show 🙁 <br /> Try
+                  changing the criteria!
+                </span>
               )}
             </ul>
           </div>

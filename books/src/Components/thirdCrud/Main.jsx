@@ -4,6 +4,7 @@ import Create from "./Create";
 import List from "./List";
 import axios from "axios";
 import Edit from "./Edit";
+import Delete from "./Delete";
 import { authConfig } from "../../Functions/auth";
 
 function Main() {
@@ -11,6 +12,7 @@ function Main() {
   const [createData, setCreateData] = useState(null);
   const [categories, setCategories] = useState(null);
   const [deleteData, setDeleteData] = useState(null);
+  const [modalDelData, setModalDelData] = useState(null);
   const [modalData, setModalData] = useState(null);
   const [editData, setEditData] = useState(null);
 
@@ -64,6 +66,8 @@ function Main() {
         setCreateData,
         categories,
         setDeleteData,
+        setModalDelData,
+        modalDelData,
         modalData,
         setModalData,
         setEditData,
@@ -76,6 +80,7 @@ function Main() {
         </div>
       </div>
       <Edit />
+      <Delete />
     </ThirdContext.Provider>
   );
 }

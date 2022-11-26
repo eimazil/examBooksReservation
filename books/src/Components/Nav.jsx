@@ -21,7 +21,7 @@ function Nav({ status }) {
               </button>
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
-                  {status === 2 || status === 3 || status === 4 ? (
+                  {status === 2 || status === 4 ? (
                     <NavLink
                       to="/"
                       end
@@ -32,7 +32,7 @@ function Nav({ status }) {
                       Home
                     </NavLink>
                   ) : null}
-                  {status === 2 || status === 3 || status === 4 ? (
+                  {status === 2 || status === 4 ? (
                     <NavLink
                       to="/myReservations"
                       end

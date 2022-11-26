@@ -2,7 +2,7 @@ import { useContext } from "react";
 import ThirdContext from "../../Contexts/ThirdContext";
 
 function Line({ category }) {
-  const { setDeleteData, setModalData } = useContext(ThirdContext);
+  const { setModalData, setModalDelData } = useContext(ThirdContext);
 
   return (
     <li className="list-group-item">
@@ -19,7 +19,7 @@ function Line({ category }) {
             Edit
           </button>
           <button
-            onClick={() => setDeleteData(category)}
+            onClick={() => setModalDelData(category)}
             type="button"
             className="btn btn-outline-danger"
           >

@@ -2,7 +2,7 @@ import { useContext } from "react";
 import SecondContext from "../../Contexts/SecondContext";
 
 function Line({ book }) {
-  const { setDeleteData, setModalData, setReturnedData } =
+  const { setModalDelData, setModalData, setReturnedData } =
     useContext(SecondContext);
 
   const returned = () => {
@@ -58,7 +58,7 @@ function Line({ book }) {
               Edit
             </button>
             <button
-              onClick={() => setDeleteData(book)}
+              onClick={() => setModalDelData(book)}
               type="button"
               className="btn btn-outline-danger"
             >
